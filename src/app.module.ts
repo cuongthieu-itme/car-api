@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { LocationModule } from './models/location/location.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
     }),
     AuthModule,
     UserModule,
+    LocationModule,
   ],
   providers: [
     {

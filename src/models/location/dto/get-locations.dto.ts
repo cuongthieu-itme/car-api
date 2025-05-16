@@ -1,7 +1,6 @@
 import { sanitizeInput } from '@/common/utils';
 import { Transform } from 'class-transformer';
 import {
-  IsEnum,
   IsNumber,
   IsOptional,
   IsPositive,
@@ -10,7 +9,7 @@ import {
   Min,
 } from 'class-validator';
 
-export class GetUsersDto {
+export class GetLocationsDto {
   @IsOptional()
   @IsNumber()
   @IsPositive()
@@ -32,8 +31,4 @@ export class GetUsersDto {
   @IsOptional()
   @IsString()
   readonly sort?: string;
-
-  @IsOptional()
-  @IsEnum(['admin', 'user'])
-  readonly role?: 'admin' | 'user';
 }

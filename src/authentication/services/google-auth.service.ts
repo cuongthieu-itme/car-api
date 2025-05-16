@@ -15,7 +15,7 @@ export class GoogleAuthService {
   constructor(
     private userService: UserService,
     private jwtService: JwtService,
-  ) {}
+  ) { }
 
   async googleLogin(req: any) {
     if (!req.user) {
@@ -57,7 +57,7 @@ export class GoogleAuthService {
     lastName: string,
   ) {
     const existingUser = await this.userService.findOneByEmail(email);
-    
+
     if (existingUser) {
       throw new ConflictException(
         'This email is already registered. Please log in instead.',

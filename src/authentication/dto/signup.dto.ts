@@ -1,3 +1,4 @@
+import { sanitizeInput } from '@/common/utils';
 import { Transform } from 'class-transformer';
 import {
   IsEmail,
@@ -6,7 +7,6 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
-import { sanitizeInput } from '@/common/utils';
 
 export class SignupDto {
   @IsString()

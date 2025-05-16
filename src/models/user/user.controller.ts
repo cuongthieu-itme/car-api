@@ -22,7 +22,7 @@ import { UpdateProfileDto } from './dto/update-profile.dto';
 
 @Controller('/user')
 export class UserController {
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService) {}
 
   @Patch('/update')
   @UseGuards(JwtAuthGuard, RolesGuard)

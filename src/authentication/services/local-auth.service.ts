@@ -8,12 +8,12 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 
+import { BlockedDomainsService } from '@/common/services/blocked-domains.service';
 import { UserService } from '@/models/user/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { BlockedDomainsService } from '@/common/services/blocked-domains.service';
 
-import { SignupDto } from '../dto/signup.dto';
 import { getRedirectUrl } from '@/common/utils';
+import { SignupDto } from '../dto/signup.dto';
 
 import * as bcrypt from 'bcryptjs';
 
@@ -23,7 +23,7 @@ export class LocalAuthService {
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
     private readonly blockedDomainsService: BlockedDomainsService,
-  ) {}
+  ) { }
 
   async validateUser(email: string, password: string): Promise<any> {
     const user = await this.userService.findOneByEmail(email, '+password');

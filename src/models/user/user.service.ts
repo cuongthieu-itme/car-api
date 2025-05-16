@@ -11,7 +11,7 @@ import { UpdateProfileDto } from './dto/update-profile.dto';
 export class UserService {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<User>,
-  ) { }
+  ) {}
 
   async find(query: FilterQuery<User> = {}, select?: string): Promise<User[]> {
     return await this.userModel.find(query).select(select).lean().exec();

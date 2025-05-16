@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 import { ConfigService } from '@nestjs/config';
 
-import { Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
+import { Strategy } from 'passport-jwt';
 
 const cookieExtractor = (req: any): string | null => {
   return req?.cookies?.access_token || null;
